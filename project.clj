@@ -3,4 +3,15 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.6.0"]])
+  :dependencies [[org.clojure/clojure "1.6.0"]]
+  :plugins [[lein-cljsbuild "1.0.3"]]
+  :source-path "src/clj"
+  :cljsbuild {:builds [{:source-paths ["src/cljs"],
+                        :compiler {:optimization :none,
+                                   :output-to "resources/public/main.js",
+                                   :pretty-print true
+                                   :source-map "resources/public/main.js"
+                                   }
+                        }]
+              }
+  )
